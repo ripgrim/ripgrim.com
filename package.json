@@ -1,0 +1,24 @@
+{
+  "name": "start-diggin-in-yo-butt-twin",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "biome check --write .",
+    "dev": "bun run --filter '*' dev",
+    "build": "bun run --filter '*' build",
+    "check-types": "bun run --filter '*' check-types",
+    "dev:native": "bun run --filter native dev",
+    "dev:web": "bun run --filter web dev",
+    "dev:server": "bun run --filter server dev"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "2.2.4",
+    "ultracite": "5.4.4"
+  },
+  "packageManager": "bun@1.2.17"
+}
