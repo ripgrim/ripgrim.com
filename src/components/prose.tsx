@@ -63,7 +63,7 @@ function CustomCodeBlock({
         </CodeBlockGroup>
         <CodeBlockCode
           code={children}
-          language={language || "text"}
+          language={"typescript"}
           theme="dracula"
         />
       </CodeBlock>
@@ -218,7 +218,11 @@ export function Prose({ children, html, className }: ProseProps) {
           className
         )}
       >
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: (() => html)(),
+          }}
+        />
       </article>
     );
   }

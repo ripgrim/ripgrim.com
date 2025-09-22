@@ -19,21 +19,11 @@ export default async function PostPage({ params }: PostPageProps) {
 
   const { post } = postData;
 
+  console.log("post", post);
+
   return (
     <main className="min-h-screen bg-background">
-      <div className="mx-auto max-w-2xl px-6 py-20">
-        {post.coverImage && (
-          <div className="mb-8">
-            <Image
-              alt=""
-              className="h-64 w-full rounded-lg object-cover opacity-90"
-              height={100}
-              src={post.coverImage}
-              width={100}
-            />
-          </div>
-        )}
-
+      <div className="mx-auto max-w-2xl px-6 pt-20">
         <header className="mb-12">
           <h1 className="mb-4 font-medium text-2xl text-foreground">
             <a
@@ -63,6 +53,19 @@ export default async function PostPage({ params }: PostPageProps) {
             )}
           </div>
         </header>
+      </div>
+      <div className="mx-auto max-w-3xl px-6 pb-20">
+        {post.coverImage && (
+          <div className="mb-8">
+            <Image
+              alt=""
+              className="h-64 w-full rounded-lg object-cover opacity-90"
+              height={100}
+              src={post.coverImage}
+              width={100}
+            />
+          </div>
+        )}
 
         <Prose html={post.content} />
       </div>

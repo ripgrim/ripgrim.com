@@ -148,27 +148,27 @@ export function CommandMenu() {
     },
 
     // Home Actions
-    {
-      name: "Scroll to Top",
-      action: () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      },
-      icon: <ArrowUp size={16} />,
-      keywords: ["scroll", "top", "beginning"],
-      showOn: "home",
-      group: "Quick Actions",
-    },
-    {
-      name: "Copy Email",
-      action: () => {
-        navigator.clipboard.writeText("hello@example.com");
-      },
-      icon: <EnvelopeSimple size={16} />,
-      keywords: ["contact", "email", "reach"],
-      showOn: "home",
-      group: "Quick Actions",
-      keepOpen: true,
-    },
+    // {
+    //   name: "Scroll to Top",
+    //   action: () => {
+    //     window.scrollTo({ top: 0, behavior: "smooth" });
+    //   },
+    //   icon: <ArrowUp size={16} />,
+    //   keywords: ["scroll", "top", "beginning"],
+    //   showOn: "home",
+    //   group: "Quick Actions",
+    // },
+    // {
+    //   name: "Copy Email",
+    //   action: () => {
+    //     navigator.clipboard.writeText("hello@example.com");
+    //   },
+    //   icon: <EnvelopeSimple size={16} />,
+    //   keywords: ["contact", "email", "reach"],
+    //   showOn: "home",
+    //   group: "Quick Actions",
+    //   keepOpen: true,
+    // },
 
     // Utilities
     {
@@ -255,7 +255,7 @@ export function CommandMenu() {
                 ref={inputRef}
               />
               <hr cmdk-raycast-loader="" />
-              <Command.List ref={listRef}>
+              <Command.List className="pb-16" ref={listRef}>
                 <Command.Empty>No results found.</Command.Empty>
 
                 {Object.entries(groupedActions).map(
@@ -284,33 +284,52 @@ export function CommandMenu() {
                 )}
               </Command.List>
 
-              <div cmdk-raycast-footer="">
-                {theme === "dark" ? <RaycastDarkIcon /> : <RaycastLightIcon />}
+              {/* <div
+                className="border-neutral-200 border-t bg-neutral-100 px-4 py-3 dark:border-neutral-700 dark:bg-neutral-800"
+                cmdk-raycast-footer=""
+              >
+                <div className="flex items-center justify-between">
+                  {theme === "dark" ? (
+                    <RaycastDarkIcon />
+                  ) : (
+                    <RaycastLightIcon />
+                  )}
 
-                <div
-                  style={{ display: "flex", alignItems: "center", gap: "8px" }}
-                >
-                  <button cmdk-raycast-open-trigger="" type="button">
-                    {(() => {
-                      if (isOnBlog) {
-                        return "Blog Page";
-                      }
-                      if (isOnHome) {
-                        return "Home Page";
-                      }
-                      return "Current Page";
-                    })()}
-                    <kbd>↵</kbd>
-                  </button>
+                  <div className="flex items-center gap-2">
+                    <button
+                      className="rounded-md bg-neutral-200 px-3 py-1.5 text-sm transition-colors hover:bg-neutral-300 dark:bg-neutral-700 dark:hover:bg-neutral-600"
+                      cmdk-raycast-open-trigger=""
+                      type="button"
+                    >
+                      {(() => {
+                        if (isOnBlog) {
+                          return "Blog Page";
+                        }
+                        if (isOnHome) {
+                          return "Home Page";
+                        }
+                        return "Current Page";
+                      })()}
+                      <kbd className="ml-2 rounded bg-neutral-300 px-1.5 py-0.5 text-xs dark:bg-neutral-600">
+                        ↵
+                      </kbd>
+                    </button>
 
-                  <hr />
+                    <div className="h-4 w-px bg-neutral-300 dark:bg-neutral-600" />
 
-                  <button cmdk-raycast-subcommand-trigger="" type="button">
-                    Actions
-                    <kbd>ESC</kbd>
-                  </button>
+                    <button
+                      className="rounded-md bg-neutral-200 px-3 py-1.5 text-sm transition-colors hover:bg-neutral-300 dark:bg-neutral-700 dark:hover:bg-neutral-600"
+                      cmdk-raycast-subcommand-trigger=""
+                      type="button"
+                    >
+                      Actions
+                      <kbd className="ml-2 rounded bg-neutral-300 px-1.5 py-0.5 text-xs dark:bg-neutral-600">
+                        ESC
+                      </kbd>
+                    </button>
+                  </div>
                 </div>
-              </div>
+              </div> */}
             </Command>
           </div>
         </div>

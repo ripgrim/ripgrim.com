@@ -5,6 +5,8 @@ export default async function BlogPage() {
   const postsData = await getPosts();
   const { posts } = postsData;
 
+  const descriptionLengthBeforeTruncate = 100;
+
   if (!posts) {
     return (
       <main className="min-h-screen bg-background">
@@ -19,7 +21,9 @@ export default async function BlogPage() {
   return (
     <main className="min-h-screen bg-background">
       <div className="mx-auto max-w-2xl px-6 py-20">
-        <h1 className="mb-8 text-2xl text-foreground">Blog</h1>
+        <h1 className="mb-8 text-2xl text-foreground">
+          Blog (powered by marble cms)
+        </h1>
 
         <div className="space-y-8">
           {posts.map((post: Post) => (
@@ -38,7 +42,9 @@ export default async function BlogPage() {
 
               {post.description && (
                 <p className="mb-4 text-muted-foreground leading-relaxed">
-                  {post.description}
+                  {post.description.slice(0, descriptionLengthBeforeTruncate)}
+                  {post.description.length > descriptionLengthBeforeTruncate &&
+                    "..."}
                 </p>
               )}
 
