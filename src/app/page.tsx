@@ -116,7 +116,7 @@ export default async function Home() {
             </p>
           </div>
         </div>
-        <div className="mb-16">
+        <div className="mb-16 print:hidden">
           <h2 className="mb-6 block text-muted-foreground text-sm md:hidden">
             What I&apos;m listening to
           </h2>
