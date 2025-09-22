@@ -15,6 +15,7 @@ type ProseProps = HTMLAttributes<HTMLElement> & {
 };
 
 const copiedtimeout = 2000;
+const languageRegex = /language-(\w+)/;
 
 function CustomCodeBlock({
   language,
@@ -126,7 +127,7 @@ function parseHtml(html: string): ReactNode[] {
       switch (tagName) {
         case "pre": {
           const codeElement = element.querySelector("code");
-          const language = codeElement?.className.match(/language-(\w+)/)?.[1];
+          const language = codeElement?.className.match(languageRegex)?.[1];
           const filename = element.querySelector("filename")?.textContent;
           const code = codeElement?.textContent || "";
           return (

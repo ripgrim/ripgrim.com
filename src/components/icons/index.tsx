@@ -8,6 +8,7 @@ export function FigmaIcon() {
       width="48px"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Figma</title>
       <path
         d="M26,17h-8c-3.866,0-7-3.134-7-7v0c0-3.866,3.134-7,7-7h8V17z"
         fill="#e64a19"
@@ -38,6 +39,7 @@ export function RaycastIcon() {
       width="28"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Raycast</title>
       <path
         clipRule="evenodd"
         d="M7 18.073V20.994L0 13.994L1.46 12.534L7 18.075V18.073ZM9.921 20.994H7L14 27.994L15.46 26.534L9.921 20.994V20.994ZM26.535 15.456L27.996 13.994L13.996 -0.00598145L12.538 1.46002L18.077 6.99802H14.73L10.864 3.14002L9.404 4.60002L11.809 7.00402H10.129V17.87H20.994V16.19L23.399 18.594L24.859 17.134L20.994 13.268V9.92102L26.534 15.456H26.535ZM7.73 6.27002L6.265 7.73202L7.833 9.29802L9.294 7.83802L7.73 6.27002ZM20.162 18.702L18.702 20.164L20.268 21.732L21.73 20.27L20.162 18.702V18.702ZM4.596 9.40402L3.134 10.866L7 14.732V11.809L4.596 9.40402ZM16.192 21H13.268L17.134 24.866L18.596 23.404L16.192 21Z"
@@ -56,6 +58,7 @@ export function YouTubeIcon() {
       width="48px"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>YouTube</title>
       <path
         d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"
         fill="#FF3D00"
@@ -73,6 +76,7 @@ export function SlackIcon() {
       width="48px"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Slack</title>
       <path
         d="M33,8c0-2.209-1.791-4-4-4s-4,1.791-4,4c0,1.254,0,9.741,0,11c0,2.209,1.791,4,4,4s4-1.791,4-4	C33,17.741,33,9.254,33,8z"
         fill="#33d375"
@@ -112,6 +116,7 @@ export function SlackIcon() {
 export function LinearIcon({ style }: { style?: React.CSSProperties }) {
   return (
     <svg fill="none" height="64" style={style} viewBox="0 0 64 64" width="64">
+      <title>Linear</title>
       <path
         d="M0.403013 37.3991L26.6009 63.597C13.2225 61.3356 2.66442 50.7775 0.403013 37.3991Z"
         fill="#5E6AD2"

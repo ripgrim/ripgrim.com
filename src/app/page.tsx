@@ -1,3 +1,4 @@
+import { NowPlaying } from "@/components/now-playing";
 import { getPosts } from "@/lib/query";
 import type { Post } from "@/types/post";
 
@@ -102,6 +103,15 @@ export default async function Home() {
             <p className="text-muted-foreground leading-relaxed">
               ill write something here some day {""}
             </p>
+          </div>
+        </div>
+        <div className="mb-16">
+          <h2 className="mb-6 block text-muted-foreground text-sm lg:hidden">
+            What I&apos;m listening to
+          </h2>
+
+          <div className="space-y-6">
+            <NowPlaying className="fixed right-[10px] bottom-[10px] z-50 w-[450px]" />
           </div>
         </div>
       </div>
