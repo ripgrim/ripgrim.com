@@ -17,12 +17,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "grim",
-  description:
-    "professional fuckarounder by scratching unscratchable itches and building whatever I want.",
+  description: "grim's personal website. blogs, projects & other things",
+  icons: {
+    icon: "/icon.svg",
+  },
   openGraph: {
     title: "grim",
-    description:
-      "professional fuckarounder by scratching unscratchable itches and building whatever I want.",
+    description: "grim's personal website. blogs, projects & other things",
     url: "https://ripgrim.com",
     siteName: "grim",
     type: "website",
@@ -30,12 +31,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "grim",
-    description:
-      "professional fuckarounder by scratching unscratchable itches and building whatever I want.",
+    description: "grim's personal website. blogs, projects & other things",
     creator: "@grimcodes",
-  },
-  icons: {
-    icon: "https://ext.same-assets.com/3954104829/3482906856.ico",
   },
 };
 

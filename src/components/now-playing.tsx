@@ -100,10 +100,14 @@ export function NowPlaying({ className }: { className: string }) {
                       width={64}
                     />
                   ) : (
-                    <div className="flex h-16 w-16 items-center justify-center bg-neutral-200 dark:bg-neutral-800">
-                      <span className="text-neutral-500 dark:text-neutral-400">
-                        ?
-                      </span>
+                    <div className="flex h-16 w-16 items-center justify-center bg-white dark:bg-black">
+                      <Image
+                        alt="grim"
+                        className="animate-spin2 dark:invert"
+                        height={64}
+                        src="/placeholder.png"
+                        width={64}
+                      />
                     </div>
                   );
                 })()}

@@ -1,11 +1,10 @@
+import { TRUNCATE_AFTER_CHARS } from "@/lib/constants";
 import { getPosts } from "@/lib/query";
 import type { Post } from "@/types/post";
 
 export default async function BlogPage() {
   const postsData = await getPosts();
   const { posts } = postsData;
-
-  const descriptionLengthBeforeTruncate = 100;
 
   if (!posts) {
     return (
@@ -42,9 +41,8 @@ export default async function BlogPage() {
 
               {post.description && (
                 <p className="mb-4 text-muted-foreground leading-relaxed">
-                  {post.description.slice(0, descriptionLengthBeforeTruncate)}
-                  {post.description.length > descriptionLengthBeforeTruncate &&
-                    "..."}
+                  {post.description.slice(0, TRUNCATE_AFTER_CHARS)}
+                  {post.description.length > TRUNCATE_AFTER_CHARS && "..."}
                 </p>
               )}
 

@@ -8,6 +8,17 @@
   --font-sans:
     "Inter", "Geist", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  @keyframes spin2 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  --animate-spin2: spin2 5s linear infinite;
 }
 
 html,

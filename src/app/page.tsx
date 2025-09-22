@@ -1,4 +1,5 @@
 import { NowPlaying } from "@/components/now-playing";
+import { TRUNCATE_AFTER_CHARS } from "@/lib/constants";
 import { getPosts } from "@/lib/query";
 import type { Post } from "@/types/post";
 
@@ -67,24 +68,34 @@ export default async function Home() {
             <h2 className="mb-6 text-muted-foreground text-sm">Writing</h2>
 
             <div className="space-y-6">
-              {posts.map((post: Post) => (
-                <div key={post.id}>
-                  <a className="group" href={`/blog/${post.slug}`}>
-                    <h3 className="mb-2 text-foreground transition-colors group-hover:text-muted-foreground">
-                      {post.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {post.description || ""}
-                    </p>
-                  </a>
-                </div>
-              ))}
+              {posts
+                .sort(
+                  (a, b) =>
+                    new Date(b.publishedAt).getTime() -
+                    new Date(a.publishedAt).getTime()
+                )
+                .slice(0, 2)
+                .map((post: Post) => (
+                  <div key={post.id}>
+                    <a className="group" href={`/blog/${post.slug}`}>
+                      <h3 className="mb-2 text-foreground transition-colors group-hover:text-muted-foreground">
+                        {post.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {post.description &&
+                        post.description.length > TRUNCATE_AFTER_CHARS
+                          ? `${post.description.slice(0, TRUNCATE_AFTER_CHARS)}...`
+                          : post.description || ""}
+                      </p>
+                    </a>
+                  </div>
+                ))}
 
-              {posts.length > 1 && (
+              {posts.length > 2 && (
                 <div>
                   <a className="group" href="/blog">
                     <h3 className="mb-2 text-foreground transition-colors group-hover:text-muted-foreground">
-                      All posts
+                      View {posts.length - 2} more posts
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       grim, unfiltered, not that it matters.
@@ -106,7 +117,7 @@ export default async function Home() {
           </div>
         </div>
         <div className="mb-16">
-          <h2 className="mb-6 block text-muted-foreground text-sm lg:hidden">
+          <h2 className="mb-6 block text-muted-foreground text-sm md:hidden">
             What I&apos;m listening to
           </h2>
 
